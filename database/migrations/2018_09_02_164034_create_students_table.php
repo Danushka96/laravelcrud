@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
             $table->string('lastname');
             $table->string('address');
             $table->string('tp');
+            $table->timestamps();
         });
     }
 

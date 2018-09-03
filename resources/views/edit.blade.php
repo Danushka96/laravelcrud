@@ -12,33 +12,34 @@
 
         <div class = "card-panel center">
               <div class="row">
-                <form class="col s12" method="POST" action="{{url('/student')}}">
+                <form class="col s12" method="POST" action="{{ route('student.update',$student->id) }}">
                     @csrf
+                    @method('PUT')
                   <div class="row">
                     <div class="input-field col s6">
                       <i class="material-icons prefix">account_circle</i>
-                      <input id="firstname" type="text" class="validate" name="firstname">
+                      <input id="firstname" type="text" class="validate" name="firstname" value="{{ $student->firstname }}">
                       <label for="firstname">First Name</label>
                     </div>
                     <div class="input-field col s6">
                       <i class="material-icons prefix">account_circle</i>
-                      <input id="lastname" type="tel" class="validate" name="lastname">
+                      <input id="lastname" type="tel" class="validate" name="lastname" value="{{ $student->lastname }}">
                       <label for="lastname">Last Name</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s6">
                       <i class="material-icons prefix">home</i>
-                      <input id="address" type="text" class="validate" name="address">
+                      <input id="address" type="text" class="validate" name="address" value="{{ $student->address }}">
                       <label for="address">Address</label>
                     </div>
                     <div class="input-field col s6">
                       <i class="material-icons prefix">phone</i>
-                      <input id="telephone" type="tel" class="validate" name="tp">
+                      <input id="telephone" type="tel" class="validate" name="tp" value="{{ $student->tp }}">
                       <label for="telephone">Telephone</label>
                     </div>
                   </div>
-                  <input type="submit" name="submit" class="btn blue right" value="Save">
+                  <input type="submit" name="submit" class="btn blue right" value="Update">
                 </form>
               </div>
         </div>

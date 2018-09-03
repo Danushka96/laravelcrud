@@ -12,8 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
-Route::get('/add', function () {
-    return view('add');
-});
+Route::resource('student','studentController');
